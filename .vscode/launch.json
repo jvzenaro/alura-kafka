@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - UserService",
+            "request": "launch",
+            "mainClass": "UserService",
+            "projectName": "ecommerce"
+        },
+        {
+            "type": "java",
             "name": "Debug (Launch) - Current File",
             "request": "launch",
             "mainClass": "${file}"
@@ -16,8 +23,7 @@
             "console": "internalConsole",
             "request": "launch",
             "mainClass": "br.com.alura.ecommerce.EmailService",
-            "projectName": "service-email",
-            
+            "projectName": "service-email"
         },
         {
             "type": "java",
@@ -42,12 +48,28 @@
             "request": "launch",
             "mainClass": "br.com.alura.ecommerce.NewOrderMain",
             "projectName": "service-new-order"
+        },
+        {
+            "type": "java",
+            "name": "NewOrderMain",
+            "console": "internalConsole",
+            "request": "launch",
+            "mainClass": "br.com.alura.ecommerce.NewOrderMain",
+            "projectName": "service-new-order"
+        },
+        {
+            "type": "java",
+            "name": "UserService",
+            "console": "internalConsole",
+            "request": "launch",
+            "mainClass": "br.com.alura.ecommerce.UserService",
+            "projectName": "service-user"
         }
     ],
     "compounds": [
         {
             "name": "Ecommerce",
-            "configurations": ["EmailService", "FraudDetectorService", "LogService"],
+            "configurations": ["EmailService", "FraudDetectorService", "LogService", "UserService"],
             "preLaunchTask": "Kafka"
         }
     ]

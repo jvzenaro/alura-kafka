@@ -6,6 +6,7 @@
             "command": "docker-compose up -d",
             "type": "shell",
             "group": "build",
+            "console": "internalConsole",
             "presentation": {
                 "reveal": "always",
                 "panel": "new"
