@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 
 public class Order {
 
+    private static BigDecimal MAX_VALUE_ORDER = new BigDecimal("4500");
+
     private final String userId;
 
     private final String orderId;
@@ -20,22 +22,18 @@ public class Order {
         return new Order(userId, orderId, value);
     }
 
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public String getUserId() {
-        return this.userId;
-    }
-
-    public BigDecimal getValue() {
-        return this.value;
+    public boolean isFraud(){
+        return MAX_VALUE_ORDER.compareTo(value) <= 0;
     }
 
     @Override
     public String toString() {
-        return "{" + " userId='" + getUserId() + "'" + ", orderId='" + getOrderId() + "'" + ", value='" + getValue()
+        return "{" + " userId='" + userId + "'" + ", orderId='" + orderId + "'" + ", value='" + value
                 + "'" + "}";
     }
+
+	public String getUserId() {
+		return userId;
+	}
 
 }

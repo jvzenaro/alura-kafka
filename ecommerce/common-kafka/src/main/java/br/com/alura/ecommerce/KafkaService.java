@@ -51,7 +51,13 @@ class KafkaService<T> implements Closeable {
             var records = consumer.poll(Duration.ofMillis(100));
             if (!records.isEmpty()) {
                 LOG.info(records.count() + " register founds");
-                records.forEach(parse::consume);
+                records.forEach(record -> {
+                    try {
+                        parse.consume(record);
+                    } catch (Exception e) {
+                        LOG.error("Error for consume message {}", record.key(), e);
+                    }
+                });
             }
         }
     }
