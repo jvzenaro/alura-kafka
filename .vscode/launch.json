@@ -1,0 +1,54 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "EmailService",
+            "console": "internalConsole",
+            "request": "launch",
+            "mainClass": "br.com.alura.ecommerce.EmailService",
+            "projectName": "service-email",
+            
+        },
+        {
+            "type": "java",
+            "name": "FraudDetectorService",
+            "console": "internalConsole",
+            "request": "launch",
+            "mainClass": "br.com.alura.ecommerce.FraudDetectorService",
+            "projectName": "service-fraud-detector"
+        },
+        {
+            "type": "java",
+            "name": "LogService",
+            "console": "internalConsole",
+            "request": "launch",
+            "mainClass": "br.com.alura.ecommerce.LogService",
+            "projectName": "service-log"
+        },
+        {
+            "type": "java",
+            "name": "NewOrderMain",
+            "console": "internalConsole",
+            "request": "launch",
+            "mainClass": "br.com.alura.ecommerce.NewOrderMain",
+            "projectName": "service-new-order"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Ecommerce",
+            "configurations": ["EmailService", "FraudDetectorService", "LogService"],
+            "preLaunchTask": "Kafka"
+        }
+    ]
+}
