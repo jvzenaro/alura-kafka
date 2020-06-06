@@ -20,21 +20,13 @@ public class Order {
         return new Order(userId, orderId, value);
     }
 
-    public String getOrderId() {
-        return orderId;
-    }
-
     public String getUserId() {
         return this.userId;
     }
 
-    public BigDecimal getValue() {
-        return this.value;
-    }
-
     @Override
     public String toString() {
-        return "{" + " userId='" + getUserId() + "'" + ", orderId='" + getOrderId() + "'" + ", value='" + getValue()
+        return "{" + " userId='" + userId + "'" + ", orderId='" + orderId + "'" + ", value='" + value
                 + "'" + "}";
     }
 

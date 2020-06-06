@@ -19,10 +19,10 @@ public class NewOrderMain {
                     var order = Order.of(UUID.randomUUID().toString(), UUID.randomUUID().toString(),
                             new BigDecimal((Math.random() * 5000) + 1));
 
-                    orderDispatcher.send("ecommerce_new_order", order.getOrderId(), order);
+                    orderDispatcher.send("ecommerce_new_order", order.getUserId(), order);
 
                     var email = Email.of("subject", "Thank you for your order! We are processing your order!");
-                    emailDispatcher.send("ecommerce_send_email", order.getOrderId(), email);
+                    emailDispatcher.send("ecommerce_send_email", order.getUserId(), email);
 
                     Thread.sleep(1000);
                 }
